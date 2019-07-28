@@ -5,7 +5,7 @@
 
 File fortnite;
 BMP280 minecraft;
-
+float pepegahands = 0;
 
 void setup() {
   // put your setup code here, to run once:
@@ -71,6 +71,11 @@ void write(){
       fortnite.println(minecraft.getTemperature());
       fortnite.println("Altitude:");
       fortnite.println(minecraft.calcAltitude(minecraft.getPressure()));
+      if (minecraft.calcAltitude(minecraft.getPressure()) > pepegahands) {
+        pepegahands =  minecraft.calcAltitude(minecraft.getPressure());
+      }
+      fortnite.println("Max Altitude:");
+      fortnite.println(pepegahands);
       // close the file:
       fortnite.close();
       Serial.println("done.");
